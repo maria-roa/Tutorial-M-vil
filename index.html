@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorial de Desarrollo de Aplicaciones Móviles</title>
+  <meta name="description" content="Tutorial interactivo sobre desarrollo de aplicaciones móviles: control de versiones, datos, sensores, multimedia, servicios, librerías y depuración.">
+  <!-- Favicon e iconos (rutas relativas) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1d1745">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <!-- Encabezado: logo, menú hamburguesa (celular), navegación y barra de progreso -->
+  <header>
+    <div class="bar">
+      <a class="logo" href="#home"><img class="brand-logo" src="img/logo-96.png" srcset="img/logo-96.png 1x, img/logo-192.png 2x" width="44" height="44" alt="">Tutorial Móvil</a>
+      <div class="tools"><button id="a11yBtn" class="ibtn" type="button" aria-label="Accesibilidad y apariencia" aria-haspopup="dialog"></button><button id="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+    </div>
+    <!-- Buscador en tiempo real -->
+    <div class="srow">
+      <form id="sf" class="srch" role="search" onsubmit="return false">
+        <label for="q" class="sr">Buscar en el tutorial</label>
+        <span class="si" aria-hidden="true"></span>
+        <input id="q" type="search" placeholder="Buscar tema o concepto…" autocomplete="off" aria-controls="results">
+        <button type="button" id="qc" aria-label="Limpiar búsqueda" hidden></button>
+      </form>
+    </div>
+    <nav id="nav" aria-label="Principal"></nav>
+    <div id="pbw" title="Progreso"><div id="pb"></div></div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- RESULTADOS DE BÚSQUEDA -->
+    <section id="results" hidden aria-live="polite"></section>
+    <!-- INICIO -->
+    <section id="home">
+      <div class="hero">
+        <div>
+          <img class="hero-logo" src="img/logo-192.png" srcset="img/logo-192.png 1x, img/logo-384.png 2x" width="96" height="96" alt="Logotipo de Tutorial Móvil: libro abierto con una T de circuitos">
+          <p class="eyebrow">APRENDE · EXPLORA · PRACTICA</p>
+          <h1>Tutorial de Desarrollo de Aplicaciones Móviles</h1>
+          <p class="sub">Explora siete temas clave, desde Git hasta seguridad, con ejemplos, diagramas y videos para aprender a tu ritmo.</p>
+          <a class="btn glow" href="#s1">Explorar tutorial →</a>
+        </div>
+        <img src="hero.svg" alt="Teléfono con código de programación móvil" width="400" height="320">
+      </div>
+      <h2>Temas destacados</h2>
+      <div class="grid feat" id="feat"></div>
+      <h2>Los siete temas</h2>
+      <div class="ctrl">
+        <div id="chips" role="group" aria-label="Filtrar por categoría"></div>
+        <button class="btn alt" id="rand" type="button"></button>
+      </div>
+      <p id="fcount" class="fcount" aria-live="polite"></p>
+      <div class="grid" id="topics"></div>
+      <p id="hp" class="prog"></p>
+    </section>
+
+    <!-- APARTADOS (se generan con JavaScript, uno a la vez) -->
+    <section id="view" hidden></section>
+  </main>
+
+  <footer><img class="foot-logo" src="img/logo-96.png" width="40" height="40" alt=""><br>Actividad de Desarrollo de Aplicaciones Móviles · HTML5, CSS3 y JavaScript</footer>
+  <button id="top" aria-label="Volver arriba">↑</button>
+
+  <!-- Ventana emergente de definiciones -->
+  <dialog id="dlg">
+    <h3 id="dt"></h3>
+    <p id="dd"></p>
+    <button class="btn" id="dx">Entendido</button>
+  </dialog>
+
+  <!-- Accesibilidad y apariencia -->
+  <dialog id="a11y" aria-labelledby="a11yT">
+    <h3 id="a11yT">Accesibilidad y apariencia</h3>
+    <div class="set"><span>Tema</span><div class="seg">
+      <button type="button" class="btn alt" data-theme="dark" aria-pressed="true">Oscuro</button>
+      <button type="button" class="btn alt" data-theme="light" aria-pressed="false">Claro</button></div></div>
+    <div class="set"><span>Tamaño del texto: <b id="fsv">100%</b></span><div class="seg">
+      <button type="button" class="btn alt" id="fsm" aria-label="Disminuir tamaño del texto">A−</button>
+      <button type="button" class="btn alt" id="fsr">Normal</button>
+      <button type="button" class="btn alt" id="fsp" aria-label="Aumentar tamaño del texto">A+</button></div></div>
+    <label class="sw"><input type="checkbox" id="hc"> Alto contraste</label>
+    <label class="sw"><input type="checkbox" id="nm"> Reducir o desactivar animaciones</label>
+    <button type="button" class="btn" id="a11yx">Listo</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
